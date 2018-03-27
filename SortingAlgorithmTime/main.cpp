@@ -351,3 +351,526 @@ void bubbleSort(int arr[], int size)
         }
     }
 }
+
+
+// Driver program
+int main()
+{
+    
+    std::chrono::high_resolution_clock::time_point  begin, end;
+    std::chrono::duration<double>                   elapsed_time;
+    double                                          elapsed_seconds;
+    int arrAccending[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100};
+    int accending = sizeof(arrAccending)/sizeof(arrAccending[0]);
+    int arrDecending[] = {100,99,98,97,96,95,94,93,92,91,90,89,88,87,86,85,84,83,82,81,80,79,78,77,76,75,74,73,72,71,70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1};
+    int decending = sizeof(arrDecending)/sizeof(arrDecending[0]);
+    int randomArray[] = {12,66,84,30,34,92,99,38,40,69,95,88,47,17,48,71,3,67,5,70,18,72,46,82,59,63,41,35,42,21,1,60,20,94,76,91,53,33,90,81,73,56,4,45,96,32,74,61,24,68,14,75,93,79,97,15,62,98,22,85,10,27,51,54,39,77,25,9,26,55,87,28,31,19,37,86,44,23,7,83,13,11,43,50,36,64,2,6,78,57,80,58,8,52,16,49,29,65,89,100};
+    int random = sizeof(randomArray)/sizeof(randomArray[0]);
+    
+    
+    //HeapSort
+    
+    begin = std::chrono::high_resolution_clock::now();                  // record start time
+    heapSort(arrAccending, accending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeHeapAccending = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();                  // record start time
+    heapSort(arrDecending, decending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeHeapDecending = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();                  // record start time
+    heapSort(randomArray, random);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeHeapRandom = elapsed_seconds;
+    
+    //HeapSort 2
+    
+    begin = std::chrono::high_resolution_clock::now();                  // record start time
+    heapSort(arrAccending, accending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeHeapAccending2 = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();                  // record start time
+    heapSort(arrDecending, decending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeHeapDecending2 = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();                  // record start time
+    heapSort(randomArray, random);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeHeapRandom2 = elapsed_seconds;
+    cout << endl;
+    
+    
+    //HeapSort
+    
+    begin = std::chrono::high_resolution_clock::now();                  // record start time
+    heapSort(arrAccending, accending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeHeapAccending3 = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();                  // record start time
+    heapSort(arrDecending, decending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeHeapDecending3 = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();                  // record start time
+    heapSort(randomArray, random);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeHeapRandom3 = elapsed_seconds;
+    cout << endl;
+    
+    // ========================
+    
+    //ShellSort
+    
+    
+    begin = std::chrono::high_resolution_clock::now();
+    shellSort(arrAccending, accending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeShellAccen = elapsed_seconds;
+    
+    
+    
+    begin = std::chrono::high_resolution_clock::now();
+    shellSort(arrDecending, decending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeShellDecend = elapsed_seconds;
+    
+    
+    
+    begin = std::chrono::high_resolution_clock::now();
+    shellSort(randomArray, random);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeShellRandom = elapsed_seconds;
+    cout << endl;
+    
+    //ShellSort
+    
+    
+    begin = std::chrono::high_resolution_clock::now();
+    shellSort(arrAccending, accending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeShellAccen2 = elapsed_seconds;
+    
+    
+    
+    begin = std::chrono::high_resolution_clock::now();
+    shellSort(arrDecending, decending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeShellDecend2 = elapsed_seconds;
+    
+    
+    
+    begin = std::chrono::high_resolution_clock::now();
+    shellSort(randomArray, random);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeShellRandom2 = elapsed_seconds;
+    cout << endl;
+    
+    //ShellSort
+    
+    
+    begin = std::chrono::high_resolution_clock::now();
+    shellSort(arrAccending, accending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeShellAccen3 = elapsed_seconds;
+    
+    
+    
+    begin = std::chrono::high_resolution_clock::now();
+    shellSort(arrDecending, decending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeShellDecend3 = elapsed_seconds;
+    
+    
+    
+    begin = std::chrono::high_resolution_clock::now();
+    shellSort(randomArray, random);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeShellRandom3 = elapsed_seconds;
+    cout << endl;
+    
+    //======================
+    
+    
+    
+    //MergeSort
+    
+    begin = std::chrono::high_resolution_clock::now();
+    mergeSort(arrAccending, accending-1);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeMergeAccend = elapsed_seconds;
+    cout << endl;
+    
+    begin = std::chrono::high_resolution_clock::now();
+    mergeSort(arrDecending, decending-1);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeMergeDecend = elapsed_seconds;
+    cout << endl;
+    
+    begin = std::chrono::high_resolution_clock::now();
+    mergeSort(randomArray, random-1);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeMergeRandom = elapsed_seconds;
+    cout << endl;
+    
+    //MergeSort
+    
+    begin = std::chrono::high_resolution_clock::now();
+    mergeSort(arrAccending, accending-1);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeMergeAccend2 = elapsed_seconds;
+    cout << endl;
+    
+    begin = std::chrono::high_resolution_clock::now();
+    mergeSort(arrDecending, decending-1);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeMergeDecend2 = elapsed_seconds;
+    cout << endl;
+    
+    begin = std::chrono::high_resolution_clock::now();
+    mergeSort(randomArray, random-1);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeMergeRandom2 = elapsed_seconds;
+    cout << endl;
+    
+    //MergeSort
+    
+    begin = std::chrono::high_resolution_clock::now();
+    mergeSort(arrAccending, accending-1);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeMergeAccend3 = elapsed_seconds;
+    cout << endl;
+    
+    begin = std::chrono::high_resolution_clock::now();
+    mergeSort(arrDecending, decending-1);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeMergeDecend3 = elapsed_seconds;
+    cout << endl;
+    
+    begin = std::chrono::high_resolution_clock::now();
+    mergeSort(randomArray, random-1);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeMergeRandom3 = elapsed_seconds;
+    cout << endl;
+    
+    //======================
+    //Quick Sort 1
+    begin = std::chrono::high_resolution_clock::now();
+    quickSort(arrAccending, accending-1);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeQuickAccend = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    quickSort(arrDecending, decending-1);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeQuickDecend = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    quickSort(randomArray, random-1);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeQuickRandom = elapsed_seconds;
+    //Quick Sort 2
+    begin = std::chrono::high_resolution_clock::now();
+    quickSort(arrAccending, accending-1);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeQuickAccend2 = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    quickSort(arrDecending, decending-1);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeQuickDecend2 = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    quickSort(randomArray, random-1);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeQuickRandom2 = elapsed_seconds;
+    //Quick Sort 3
+    begin = std::chrono::high_resolution_clock::now();
+    quickSort(arrAccending, accending-1);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeQuickAccend3 = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    quickSort(arrDecending, decending-1);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeQuickDecend3 = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    quickSort(randomArray, random-1);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeQuickRandom3 = elapsed_seconds;
+    //======================
+    // Selection Sort 1
+    begin = std::chrono::high_resolution_clock::now();
+    selectionSort(arrAccending, accending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeSelectionAccend = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    selectionSort(arrDecending, decending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeSelectionDecend = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    selectionSort(randomArray, random);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeSelectionRandom = elapsed_seconds;
+    // Selection Sort 2
+    begin = std::chrono::high_resolution_clock::now();
+    selectionSort(arrAccending, accending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeSelectionAccend2 = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    selectionSort(arrDecending, decending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeSelectionDecend2 = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    selectionSort(randomArray, random);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeSelectionRandom2 = elapsed_seconds;
+    // Selection Sort 3
+    begin = std::chrono::high_resolution_clock::now();
+    selectionSort(arrAccending, accending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeSelectionAccend3 = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    selectionSort(arrDecending, decending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeSelectionDecend3 = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    selectionSort(randomArray, random);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeSelectionRandom3 = elapsed_seconds;
+    //=================
+    // Bubble Sort 1
+    begin = std::chrono::high_resolution_clock::now();
+    bubbleSort(arrAccending, accending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeBubbleAccend = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    bubbleSort(arrDecending, decending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeBubbleDecend = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    bubbleSort(randomArray, random);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeBubbleRandom = elapsed_seconds;
+    // Bubble Sort 2
+    begin = std::chrono::high_resolution_clock::now();
+    bubbleSort(arrAccending, accending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeBubbleAccend2 = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    bubbleSort(arrDecending, decending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeBubbleDecend2 = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    bubbleSort(randomArray, random);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeBubbleRandom2 = elapsed_seconds;
+    // Bubble Sort 3
+    begin = std::chrono::high_resolution_clock::now();
+    bubbleSort(arrAccending, accending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeBubbleAccend3 = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    bubbleSort(arrDecending, decending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeBubbleDecend3 = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    bubbleSort(randomArray, random);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeBubbleRandom3 = elapsed_seconds;
+    //=====================
+    //Inseriton Sort 1
+    begin = std::chrono::high_resolution_clock::now();
+    insertionSort(arrAccending, accending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeInsertionAccend = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    insertionSort(arrDecending, decending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeInsertionDecend = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    insertionSort(randomArray, random);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeInsertionRandom = elapsed_seconds;
+    
+    
+    //Inseriton Sort 1
+    begin = std::chrono::high_resolution_clock::now();
+    insertionSort(arrAccending, accending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeInsertionAccend2 = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    insertionSort(arrDecending, decending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeInsertionDecend2 = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    insertionSort(randomArray, random);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeInsertionRandom2 = elapsed_seconds;
+    //Inseriton Sort 1
+    begin = std::chrono::high_resolution_clock::now();
+    insertionSort(arrAccending, accending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeInsertionAccend3 = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    insertionSort(arrDecending, decending);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeInsertionDecend3 = elapsed_seconds;
+    begin = std::chrono::high_resolution_clock::now();
+    insertionSort(randomArray, random);
+    end   = std::chrono::high_resolution_clock::now();
+    elapsed_time    = end - begin;                                      // get the period of time elapsed
+    elapsed_seconds = elapsed_time.count();                             // convert to (fractional)// record end time
+    double timeInsertionRandom3 = elapsed_seconds;
+    //================
+    
+    
+    double avgHeapAccend = (timeHeapAccending + timeHeapAccending2+timeHeapAccending3)/3;
+    double avgHeapDecend = (timeHeapDecending+timeHeapDecending2+timeHeapDecending3)/3;
+    double avgHeapRandom = (timeHeapRandom+timeHeapRandom2+timeHeapRandom3)/3;
+    double avgShellAccend = (timeShellAccen+timeShellAccen2+timeShellAccen3)/3;
+    double avgShellDecend = (timeShellDecend+timeShellDecend2+timeShellDecend3)/3;
+    double avgShellRandom = (timeShellRandom+timeShellRandom2+timeShellRandom3)/3;
+    double avgMergeAccend = (timeMergeAccend+timeMergeAccend2+timeMergeAccend3)/3;
+    double avgMergeRandom = (timeMergeRandom+timeMergeRandom3+timeMergeRandom2)/3;
+    double avgMergeDecend = (timeMergeDecend+timeMergeDecend2+timeMergeDecend3)/3;
+    double avgQuickAccend = (timeQuickAccend+timeQuickAccend2+timeQuickAccend3)/3;
+    double avgQuickDecend = (timeQuickDecend+timeQuickDecend2+timeQuickDecend3)/3;
+    double avgQuickRandom = (timeQuickRandom+timeQuickRandom2+timeQuickRandom3)/3;
+    double avgSelectionAccend = (timeSelectionAccend+timeSelectionAccend2+timeSelectionAccend3)/3;
+    double avgSelectionDecend = (timeSelectionDecend+timeSelectionDecend2+timeSelectionDecend3)/3;
+    double avgSelectionRandom = (timeSelectionRandom+timeSelectionRandom2+timeSelectionRandom3)/3;
+    double avgBubbleAccend = (timeBubbleAccend+timeBubbleAccend2+timeBubbleAccend3)/3;
+    double avgBubbleDecend = (timeBubbleDecend+timeBubbleDecend2+timeBubbleDecend3)/3;
+    double avgBubbleRandom = (timeBubbleRandom+timeBubbleRandom2+timeBubbleRandom3)/3;
+    double avgInsertionAccend = (timeInsertionAccend+timeInsertionAccend2+timeInsertionAccend3)/3;
+    double avgInsertionDecend = (timeInsertionDecend+timeInsertionDecend2+timeInsertionDecend3)/3;
+    double avgInsertionRandom = (timeInsertionRandom+timeInsertionRandom2+timeInsertionRandom3)/3;
+    ofstream myfile;
+    myfile.open ("sortingResults.csv");
+    myfile << "Selection,"<< avgSelectionAccend << "," << avgSelectionDecend << "," << avgSelectionRandom << "\n";
+    myfile << "Insertion,"<< avgInsertionAccend << "," << avgInsertionDecend << "," << avgInsertionRandom << "\n";
+    myfile << "Bubble,"<< avgBubbleAccend << "," << avgBubbleDecend << "," << avgBubbleRandom << "\n";
+    myfile << "Quick,"<< avgQuickAccend << "," << avgQuickDecend << "," << avgQuickRandom << "\n";
+    myfile << "Heap,"<< avgHeapAccend << "," << avgHeapDecend << "," << avgHeapRandom << "\n";
+    myfile << "Merge,"<< avgMergeAccend << "," << avgMergeDecend << "," << avgMergeRandom << "\n";
+    myfile << "Shell,"<< avgShellAccend << "," << avgShellDecend << "," << avgShellRandom << "\n";
+    myfile.close();
+}
