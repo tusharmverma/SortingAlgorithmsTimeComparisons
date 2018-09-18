@@ -187,3 +187,54 @@ void mergeSort(int arr[], int size)
     int start = 0;
     mergeSort(arr, start, size);
 }
+
+
+/**
+ * Method: swap
+ *    A utility function to swap two elements.
+ *
+ * @param   int*a - Element that needs to be swaped with second
+ *          int*b - Element thats going to be swaped with first
+ *
+ * @return  nothing
+ */
+void swap(int* a, int* b)
+{
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+
+/**
+ * Method: bubbleSort
+ *     This function takes last element as pivot, places
+ *     the pivot element at its correct position in sorted
+ *     array, and places all smaller (smaller than pivot)
+ *     to left of pivot and all greater elements to right
+ *     of pivot
+ *
+ * @param   arr[] - Array of integers
+ *          low - left side index
+ *          high - right side index
+ *
+ * @return  nothing
+ */
+/*  */
+int partition (int arr[], int low, int high)
+{
+    int pivot = arr[high];    // pivot
+    int i = (low - 1);  // Index of smaller element
+    
+    for (int j = low; j <= high- 1; j++)
+    {
+        // If current element is smaller than or
+        // equal to pivot
+        if (arr[j] <= pivot)
+        {
+            i++;    // increment index of smaller element
+            swap(&arr[i], &arr[j]);
+        }
+    }
+    swap(&arr[i + 1], &arr[high]);
+    return (i + 1);
+}
