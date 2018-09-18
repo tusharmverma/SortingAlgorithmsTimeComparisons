@@ -238,3 +238,92 @@ int partition (int arr[], int low, int high)
     swap(&arr[i + 1], &arr[high]);
     return (i + 1);
 }
+
+
+/**
+ * Method: quickSort
+ *    The function that implements QuickSort
+ *
+ * @param    arr[] - Array to be sorted
+ *           low  - Starting index
+ *           high  - Ending index
+ *
+ * @return  nothing
+ */
+void quickSort(int arr[], int low, int high)
+{
+    if (low < high)
+    {
+        //index is partitioning index, arr[low] is now at right place
+        int index = partition(arr, low, high);
+        
+        // Separately sort elements before
+        // partition and after partition
+        quickSort(arr, low, index - 1);
+        quickSort(arr, index + 1, high);
+    }
+}
+
+/**
+ * Method: quickSort
+ *    A function to call the quickSort function.
+ *
+ * @param   arr[] - Array of integers
+ *          size - Size of the array
+ *
+ * @return  nothing
+ */
+void quickSort(int arr[],int size)
+{
+    int start = 0;
+    quickSort(arr, start, size);
+}
+
+
+/**
+ * Method: Swap
+ *    Function to sort an array using selection sort.
+ *
+ * @param   arr[] - The number to be swapped
+ *          size - Size of the array
+ *
+ * @return  nothing
+ */
+void selectionSort(int arr[], int size)
+{
+    int i, j, min;
+    for (i = 0; i < size-1; i++)            // One by one move boundary of unsorted subarray
+    {
+        min = i;                            // Find the minimum element in unsorted array
+        for (j = i+1; j < size; j++){
+            if (arr[j] < arr[min])
+                min = j;
+        }
+        swap(&arr[min], &arr[i]);           // Swap the found minimum element with the first element
+    }
+}
+
+/**
+ * Method: insertionSort
+ *    Function to sort an array using insertion sort.
+ *
+ * @param   arr[] - Array of integers
+ *          size - Size of the array
+ *
+ * @return  nothing
+ */
+void insertionSort(int arr[], int size)
+{
+    int i, key, j;
+    for (i = 1; i < size; i++)
+    {
+        key = arr[i];
+        j = i-1;
+        while (j >= 0 && arr[j] > key)      //Elements that are greater than key
+        {
+            arr[j+1] = arr[j];              //Move elements to one position ahead of their current position
+            j = j-1;
+        }
+        arr[j+1] = key;
+    }
+}
