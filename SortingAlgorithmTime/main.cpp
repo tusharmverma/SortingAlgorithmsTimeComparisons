@@ -327,3 +327,27 @@ void insertionSort(int arr[], int size)
         arr[j+1] = key;
     }
 }
+
+
+/**
+ * Method: bubbleSort
+ *    A function to implement bubble sort.
+ *
+ * @param   arr[] - Array of integers
+ *          size - Size of the array
+ *
+ * @return  nothing
+ */
+void bubbleSort(int arr[], int size)
+{
+    
+    int i, j;
+    for (i = 0; i < size-1; i++){
+        for (j = 0; j < size-i-1; j++){      // Last i elements are already in place
+            if (arr[j] > arr[j+1]){
+                
+                swap(&arr[j], &arr[j+1]);
+            }
+        }
+    }
+}
